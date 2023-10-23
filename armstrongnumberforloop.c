@@ -1,19 +1,27 @@
 #include <stdio.h>
-
+#include <math.h>
 int main()
 {
-    int rem, num, temp, sum = 0;
+    int n, sum = 0, c = 0;
     printf("enter num");
-    scanf("%d", &num);
-    temp = num;
-    for (sum = 0; num > 0; num = num / 10)
+    scanf("%d", &n);
+    int b = n;
+    for (b = n; n != 0; c++)
     {
-        rem = num % 10;
-        sum = sum + rem * rem * rem;
+        n = n / 10;
     }
-    if (temp == sum)
-        printf(" number is angstrome");
+    for (b = n; b != 0; n = n / 10)
+    {
+        int y = b % 10;
+        sum = sum + pow(y, c);
+    }
+    if (b == sum)
+    {
+        printf("it is angstrome number");
+    }
     else
-        printf(" number is not angstrome");
+    {
+        printf("it is not angstrome number");
+    }
     return 0;
 }
