@@ -1,21 +1,31 @@
 #include <stdio.h>
-
+#include <math.h>
 int main()
 {
-    int rem, num, temp, sum = 0;
+    int n, sum = 0, c = 0;
     printf("enter num");
-    scanf("%d", &num);
-    temp = num;
-    while (num > 0)
+    scanf("%d", &n);
+    int b = n;
+    int a = n;
+    while (n > 0)
     {
-        rem = num % 10;
-        rem = rem * rem * rem;
-        sum = sum + rem;
-        num = num / 10;
+        int y = n % 10;
+        c++;
+        n = n / 10;
     }
-    if (temp == sum)
-        printf(" number is angstrome");
+    while (b > 0)
+    {
+        int y = b % 10;
+        sum = sum + pow(y, c);
+        b = b / 10;
+    }
+    if (a == sum)
+    {
+        printf("it is angstrome number");
+    }
     else
-        printf(" number is not angstrome");
+    {
+        printf("it is not angstrome number");
+    }
     return 0;
 }
